@@ -1,0 +1,15 @@
+blueprint:
+  name: Virtual MQTT Add-On
+  description: Configure the Virtual MQTT Add-On
+  domain: automation
+  input:
+    broker:
+      name: MQTT Broker URL
+      selector:
+        text:
+steps:
+  - service: hassio.addon_start
+    target:
+      entity_id: addon.virtual_mqtt
+    data:
+      broker: !input broker

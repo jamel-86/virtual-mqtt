@@ -1,0 +1,23 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Virtual MQTT add-on
+version: "1.0.0"
+slug: virtual-mqtt
+description: Virtual NQTT add-on is an addon for you to create virtual MQTT devices.
+url: "https://github.com/jamel-86/virtual-mqtt/tree/main/virtual-mqtt"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: services
+map:
+  - share:rw
+options:
+  broker: mqtt://localhost
+schema:
+  broker:
+    type: "str?"
+    description: MQTT Broker URL
+    required: true
+image: "ghcr.io/home-assistant/{arch}-addon-virtual-mqtt"
